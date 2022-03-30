@@ -40,6 +40,7 @@ class MainActivityEspressoTest {
         }
     }
 
+
     private fun delay(): ViewAction? {
         return object : ViewAction {
             override fun getConstraints(): Matcher<View> = isRoot()
@@ -50,6 +51,23 @@ class MainActivityEspressoTest {
         }
     }
 
+    @Test
+    fun activityEditText_IsDisplayed() {
+        onView(withId(R.id.searchEditText)).check(matches(isDisplayed()))
+    }
+    @Test
+    fun activityEditText_IsCompletelyDisplayed() {
+        onView(withId(R.id.searchEditText)).check(matches(isCompletelyDisplayed()))
+    }
+
+    @Test
+    fun activityButton_IsDisplayed() {
+        onView(withId(R.id.toDetailsActivityButton)).check(matches(isDisplayed()))
+    }
+    @Test
+    fun activityButton_IsCompletelyDisplayed() {
+        onView(withId(R.id.toDetailsActivityButton)).check(matches(isCompletelyDisplayed()))
+    }
     @After
     fun close() {
         scenario.close()
