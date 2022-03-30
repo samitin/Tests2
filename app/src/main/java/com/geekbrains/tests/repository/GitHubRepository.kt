@@ -30,4 +30,8 @@ internal class GitHubRepository(private val gitHubApi: GitHubApi) : RepositoryCo
             }
         })
     }
+    interface GitHubRepositoryCallback {
+        fun handleGitHubResponse(response: Response<SearchResponse?>?)
+        fun handleGitHubError()
+    }
 }
